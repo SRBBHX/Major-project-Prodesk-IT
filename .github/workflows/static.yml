@@ -14,10 +14,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Copy HTML and assets to public/
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Copy site to public/
         run: |
           mkdir public
           cp -r HTML/* public/
@@ -25,8 +28,8 @@ jobs:
           cp -r CSS public/
           cp -r JAVASCRIPT public/
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: public
 
@@ -38,5 +41,5 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
         id: deployment
+        uses: actions/deploy-pages@v4
