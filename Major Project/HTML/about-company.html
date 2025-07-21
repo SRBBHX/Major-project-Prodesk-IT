@@ -1,0 +1,563 @@
+path <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Company - SRBBHX Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background-image: url('../ASSETS/IMAGES/about hero bg.jpg');
+            background-size: cover;
+            background-position:bottom-center;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 120px 0 300px;
+            text-align: center;
+            color: white;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        .page-header .content-container {
+            position: relative;
+            z-index: 2;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .about-image {
+            text-align: center;
+        }
+        .about-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .stats-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .values-section {
+            padding: 80px 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .value-card {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+        }
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .value-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .value-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .about-grid, .values-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="../ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">About SRBBHX</h1>
+            <p class="page-subtitle">
+                Pioneering software development excellence for over three decades, 
+                transforming businesses through innovative technology solutions
+            </p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <p>
+                        Founded in 1993, SRBBHX has evolved from a small software consultancy into a global leader 
+                        in custom software development. Our journey began with a simple mission: to bridge the gap 
+                        between complex business challenges and innovative technology solutions.
+                    </p>
+                    <p>
+                        Over the past 30+ years, we've partnered with Fortune 500 companies, emerging startups, 
+                        and everything in between, delivering cutting-edge software solutions that drive digital 
+                        transformation and business growth.
+                    </p>
+                    <p>
+                        Today, SRBBHX stands as a testament to the power of innovation, quality, and client-centric 
+                        approach. With over 700 IT professionals across multiple locations, we continue to push 
+                        the boundaries of what's possible in software development.
+                    </p>
+                </div>
+                <div class="about-image">
+                    <div style="width: 100%; height: 400px; background-image: url('../ASSETS/IMAGES/about our story.jpg'); background-size: cover; background-position: center; border-radius: 20px; display: flex; align-items: center; justify-content: center; filter: blur(2px); transition: filter 0.3s ease;" onmouseover="this.style.filter='blur(0px)'" onmouseout="this.style.filter='blur(2px)'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="content-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">Years of Excellence</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">700+</span>
+                    <span class="stat-label">IT Professionals</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Successful Projects</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Countries Served</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Core Values</h2>
+                <p class="section-subtitle">
+                    The principles that guide everything we do and define who we are as a company
+                </p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p class="value-description">
+                        We embrace cutting-edge technologies and creative problem-solving to deliver 
+                        solutions that push the boundaries of what's possible.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="value-title">Excellence</h3>
+                    <p class="value-description">
+                        Quality is not just a goal—it's our standard. We strive for perfection in 
+                        every line of code and every client interaction.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Partnership</h3>
+                    <p class="value-description">
+                        We believe in building long-term relationships with our clients, working as 
+                        true partners in their success and growth.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p class="value-description">
+                        Transparency, honesty, and ethical practices form the foundation of all our 
+                        business relationships and decisions.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Collaboration</h3>
+                    <p class="value-description">
+                        Great software is built by great teams. We foster a collaborative environment 
+                        that brings out the best in everyone.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="value-title">Growth</h3>
+                    <p class="value-description">
+                        We're committed to continuous learning and improvement, both for our team 
+                        and our clients' businesses.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../ASSETS/IMAGES/scnsoft-logo.png" alt="SRBBHX Logo">
+                        <span class="footer-logo-text">SCNSoft</span>
+                    </div>
+                    <p class="footer-description">
+                        Leading software development company with 30+ years of experience in delivering 
+                        innovative solutions that drive business growth and digital transformation.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                        <li><a href="index.html#services">Cloud Solutions</a></li>
+                        <li><a href="index.html#services">AI Development</a></li>
+                        <li><a href="index.html#services">DevOps & Automation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about-company.html">About Us</a></li>
+                        <li><a href="mission.html">Our Mission</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="index.html#news">News</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#industries">Healthcare</a></li>
+                        <li><a href="index.html#industries">Finance</a></li>
+                        <li><a href="index.html#industries">E-commerce</a></li>
+                        <li><a href="index.html#industries">Education</a></li>
+                        <li><a href="index.html#industries">Manufacturing</a></li>
+                        <li><a href="index.html#industries">Logistics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Tech Street, Silicon Valley, CA 94000</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@srbbhx.com</span>
+                        </div>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 SRBBHX. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="index.html#privacy">Privacy Policy</a>
+                    <a href="index.html#terms">Terms of Service</a>
+                    <a href="index.html#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

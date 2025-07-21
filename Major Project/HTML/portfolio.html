@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - SRBBHX Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .portfolio-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 10px 25px;
+            border: 2px solid #7E1891;
+            background: transparent;
+            color: #7E1891;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #7E1891;
+            color: white;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        .portfolio-image {
+            height: 250px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .portfolio-image i {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+        }
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .view-btn {
+            background: white;
+            color: #7E1891;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .view-btn:hover {
+            background: #7E1891;
+            color: white;
+        }
+        .portfolio-content {
+            padding: 2rem;
+        }
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-category {
+            color: #7E1891;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .portfolio-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .portfolio-tag {
+            background: #F5EFFF;
+            color: #7E1891;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .portfolio-stats {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-value {
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .featured-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .featured-project {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .featured-project:nth-child(even) {
+            direction: rtl;
+        }
+        .featured-project:nth-child(even) > * {
+            direction: ltr;
+        }
+        .featured-image {
+            height: 400px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .featured-image i {
+            font-size: 5rem;
+            color: white;
+            opacity: 0.8;
+        }
+        .featured-content h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .featured-content .category {
+            color: #7E1891;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .featured-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .featured-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .metric-item {
+            text-align: center;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+        }
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+        }
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-project {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .featured-project:nth-child(even) {
+                direction: ltr;
+            }
+            .featured-metrics {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Our Portfolio</h1>
+            <p class="page-subtitle">
+                Showcasing our successful projects and innovative solutions that have transformed 
+                businesses across various industries worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Highlighting our most impactful and innovative software solutions
+                </p>
+            </div>
+            
+            <div class="featured-project">
+                <div class="featured-image">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <div class="featured-content">
+                    <div class="category">Healthcare • Enterprise Software</div>
+                    <h3>MedConnect Platform</h3>
+                    <p>
+                        A comprehensive healthcare management system that connects patients, doctors, and 
+                        healthcare providers through a unified digital platform. The solution includes 
+                        telemedicine capabilities, electronic health records, and AI-powered diagnostics.
+                    </p>
+                    <div class="featured-metrics">
+                        <div class="metric-item">
+                            <span class="metric-value">500K+</span>
+                            <span class="metric-label">Active Users</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">40%</span>
+                            <span class="metric-label">Cost Reduction</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">99.9%</span>
+                            <span class="metric-label">Uptime</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-project">
+                <div class="featured-image">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="featured-content">
+                    <div class="category">E-commerce • Web Development</div>
+                    <h3>RetailMax E-commerce Suite</h3>
+                    <p>
+                        A scalable e-commerce platform built for a Fortune 500 retailer, featuring 
+                        advanced inventory management, personalized recommendations, and omnichannel 
+                        integration across web, mobile, and in-store experiences.
+                    </p>
+                    <div class="featured-metrics">
+                        <div class="metric-item">
+                            <span class="metric-value">2M+</span>
+                            <span class="metric-label">Daily Transactions</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">150%</span>
+                            <span class="metric-label">Revenue Increase</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">35%</span>
+                            <span class="metric-label">Conversion Rate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="featured-project">
+                <div class="featured-image">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="featured-content">
+                    <div class="category">Finance • Mobile App</div>
+                    <h3>FinanceFlow Mobile Banking</h3>
+                    <p>
+                        A secure mobile banking application with advanced features including biometric 
+                        authentication, real-time fraud detection, investment tracking, and AI-powered 
+                        financial insights for personal finance management.
+                    </p>
+                    <div class="featured-metrics">
+                        <div class="metric-item">
+                            <span class="metric-value">1M+</span>
+                            <span class="metric-label">App Downloads</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">4.8/5</span>
+                            <span class="metric-label">App Store Rating</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-value">60%</span>
+                            <span class="metric-label">User Engagement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">All Projects</h2>
+                <p class="section-subtitle">
+                    Browse our complete portfolio of successful software solutions
+                </p>
+            </div>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">Web Development</button>
+                <button class="filter-btn">Mobile Apps</button>
+                <button class="filter-btn">Enterprise Software</button>
+                <button class="filter-btn">E-commerce</button>
+                <button class="filter-btn">AI/ML</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-graduation-cap"></i>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">EduTech Learning Platform</h3>
+                        <p class="portfolio-category">Education • Web Development</p>
+                        <p class="portfolio-description">
+                            Interactive online learning platform with video streaming, assessments, 
+                            and progress tracking for educational institutions.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React</span>
+                            <span class="portfolio-tag">Node.js</span>
+                            <span class="portfolio-tag">MongoDB</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">50K+</span>
+                                <span class="stat-label">Students</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">12 Months</span>
+                                <span class="stat-label">Timeline</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">95%</span>
+                                <span class="stat-label">Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-truck"></i>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">LogiTrack Supply Chain</h3>
+                        <p class="portfolio-category">Logistics • Enterprise Software</p>
+                        <p class="portfolio-description">
+                            Comprehensive supply chain management system with real-time tracking, 
+                            inventory optimization, and predictive analytics.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Java</span>
+                            <span class="portfolio-tag">Spring Boot</span>
+                            <span class="portfolio-tag">PostgreSQL</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">1000+</span>
+                                <span class="stat-label">Warehouses</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">18 Months</span>
+                                <span class="stat-label">Timeline</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">30%</span>
+                                <span class="stat-label">Cost Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-mobile-alt"></i>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">FitLife Wellness App</h3>
+                        <p class="portfolio-category">Health & Fitness • Mobile App</p>
+                        <p class="portfolio-description">
+                            Comprehensive fitness and wellness mobile application with workout tracking, 
+                            nutrition planning, and social features.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">React Native</span>
+                            <span class="portfolio-tag">Firebase</span>
+                            <span class="portfolio-tag">ML Kit</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">250K+</span>
+                                <span class="stat-label">Downloads</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">8 Months</span>
+                                <span class="stat-label">Timeline</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">4.7/5</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-chart-bar"></i>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">DataViz Analytics Dashboard</h3>
+                        <p class="portfolio-category">Business Intelligence • Web App</p>
+                        <p class="portfolio-description">
+                            Advanced business intelligence dashboard with real-time data visualization, 
+                            custom reporting, and predictive analytics capabilities.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Angular</span>
+                            <span class="portfolio-tag">Python</span>
+                            <span class="portfolio-tag">TensorFlow</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">100+</span>
+                                <span class="stat-label">Companies</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">14 Months</span>
+                                <span class="stat-label">Timeline</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">85%</span>
+                                <span class="stat-label">Efficiency Gain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-home"></i>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">SmartHome IoT Platform</h3>
+                        <p class="portfolio-category">IoT • Mobile & Web</p>
+                        <p class="portfolio-description">
+                            Integrated smart home automation platform connecting various IoT devices 
+                            with centralized control and AI-powered automation.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Flutter</span>
+                            <span class="portfolio-tag">AWS IoT</span>
+                            <span class="portfolio-tag">Alexa Skills</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">75K+</span>
+                                <span class="stat-label">Homes</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">10 Months</span>
+                                <span class="stat-label">Timeline</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value">40%</span>
+                                <span class="stat-label">Energy Savings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <i class="fas fa-car"></i>
+                        <div class="portfolio-overlay">
+                            <a href="#" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">AutoDealer Management System</h3>
+                        <p class="portfolio-category">Automotive • Enterprise Software</p>
+                        <p class="portfolio-description">
+                            Complete dealership management solution with inventory tracking, 
+                            customer relationship management, and sales analytics.
+                        </p>
+                        <div class="portfolio-tags">
+                            <span class="portfolio-tag">Vue.js</span>
+                            <span class="portfolio-tag">Laravel</span>
+                            <span class="portfolio-tag">MySQL</span>
+                        </div>
+                        <div class="portfolio-stats">
+                            <div class="stat-item">
+                                <span class="stat-value">200+</span>
+                                <span class="stat-label">Dealerships

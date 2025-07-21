@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews - SRBBHX Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Major Project/docs/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .stat-card {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+        }
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .stat-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .review-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+        .quote-icon {
+            position: absolute;
+            top: -15px;
+            left: 2rem;
+            width: 40px;
+            height: 40px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .quote-icon i {
+            color: white;
+            font-size: 1.2rem;
+        }
+        .review-rating {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+        .star {
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+        .review-text {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .reviewer-avatar {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .reviewer-avatar i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .reviewer-details h4 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+        .reviewer-position {
+            color: #7E1891;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.2rem;
+        }
+        .reviewer-company {
+            color: #666;
+            font-size: 0.8rem;
+        }
+        .featured-reviews {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .featured-review {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .featured-quote {
+            font-size: 1.5rem;
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .featured-rating {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .featured-rating .star {
+            font-size: 1.5rem;
+        }
+        .featured-reviewer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        .featured-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .featured-avatar i {
+            color: white;
+            font-size: 2rem;
+        }
+        .featured-details h3 {
+            color: #333;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .featured-position {
+            color: #7E1891;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        .featured-company {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .case-studies {
+            padding: 80px 0;
+        }
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .case-study-card {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .case-study-card:hover {
+            transform: translateY(-5px);
+        }
+        .case-icon {
+            width: 60px;
+            height: 60px;
+            background: #7E1891;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .case-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .case-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .case-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .case-results {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .result-item {
+            text-align: center;
+        }
+        .result-value {
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+        }
+        .result-label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .case-link {
+            color: #7E1891;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .case-link:hover {
+            color: #A294F9;
+        }
+        @media (max-width: 768px) {
+            .stats-overview {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .reviews-grid, .case-study-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-reviewer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/Major Project/docs/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/docs/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Client Reviews</h1>
+            <p class="page-subtitle">
+                Hear what our clients say about their experience working with SRBBHX and 
+                the impact our solutions have made on their businesses
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Overview -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="stat-number">4.9/5</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-redo"></i>
+                    </div>
+                    <span class="stat-number">95%</span>
+                    <span class="stat-label">Repeat Clients</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Satisfaction Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Review -->
+    <section class="featured-reviews">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Review</h2>
+                <p class="section-subtitle">
+                    Spotlight on exceptional client feedback and success stories
+                </p>
+            </div>
+            
+            <div class="featured-review">
+                <div class="featured-quote">
+                    "SRBBHX transformed our entire business operations with their innovative software solution. 
+                    The team's expertise, professionalism, and dedication exceeded our expectations. Our efficiency 
+                    increased by 60% and customer satisfaction reached an all-time high."
+                </div>
+                <div class="featured-rating">
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                    <i class="fas fa-star star"></i>
+                </div>
+                <div class="featured-reviewer">
+                    <div class="featured-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="featured-details">
+                        <h3>Robert Johnson</h3>
+                        <div class="featured-position">Chief Executive Officer</div>
+                        <div class="featured-company">TechCorp Industries</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Grid -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">
+                    Real feedback from real clients who have experienced our services
+                </p>
+            </div>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The mobile app SRBBHX developed for us has been a game-changer. User engagement 
+                        increased by 200% and our app store ratings improved significantly. Their attention 
+                        to detail and user experience design is exceptional."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Sarah Mitchell</h4>
+                            <div class="reviewer-position">Product Manager</div>
+                            <div class="reviewer-company">FinanceFlow Inc.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="review-text">
+                        "Working with SRBBHX was an absolute pleasure. They delivered our e-commerce platform 
+                        on time and within budget. The solution has helped us increase online sales by 150% 
+                        in just six months."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Michael Chen</h4>
+                            <div class="reviewer-position">CTO</div>
+                            <div class="reviewer-company">RetailMax Solutions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The healthcare management system SRBBHX built for our hospital network has 
+                        revolutionized our operations. Patient satisfaction scores improved by 40% 
+                        and administrative efficiency increased dramatically."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Dr. Emily Rodriguez</h4>
+                            <div class="reviewer-position">Chief Medical Officer</div>
+                            <div class="reviewer-company">MedConnect Health</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="review-text">
+                        "SRBBHX's team understood our complex logistics requirements perfectly. The supply 
+                        chain management system they developed has reduced our operational costs by 30% 
+                        and improved delivery times significantly."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>David Thompson</h4>
+                            <div class="reviewer-position">Operations Director</div>
+                            <div class="reviewer-company">LogiTrack Systems</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="review-text">
+                        "The educational platform SRBBHX created for our university has transformed online 
+                        learning. Student engagement increased by 80% and course completion rates improved 
+                        significantly. Excellent work!"
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>Prof. Lisa Wang</h4>
+                            <div class="reviewer-position">Dean of Technology</div>
+                            <div class="reviewer-company">EduTech University</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <div class="review-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p class="review-text">
+                        "SRBBHX delivered a robust analytics dashboard that provides real-time insights 
+                        into our business performance. The data visualization capabilities have helped 
+                        us make better strategic decisions and improve our ROI by 45%."
+                    </p>
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="reviewer-details">
+                            <h4>James Anderson</h4>
+                            <div class="reviewer-position">Business Intelligence Manager</div>
+                            <div class="reviewer-company">DataViz Analytics</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="case-studies">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">
+                    Detailed case studies showcasing measurable results and client success
+                </p>
+            </div>
+            
+            <div class="case-study-grid">
+                <div class="case-study-card">
+                    <div class="case-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="case-title">E-commerce Revenue Growth</h3>
+                    <p class="case-description">
+                        Developed a comprehensive e-commerce platform that resulted in significant 
+                        revenue growth and improved customer experience.
+                    </p>
+                    <div class="case-results">
+                        <div class="result-item">
+                            <span class="result-value">150%</span>
+                            <span class="result-label">Revenue Increase</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">200%</span>
+                            <span class="result-label">Traffic Growth</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-value">35%</span>
+                            <span class="result-label">Conversion Rate</span>
+                        </div>
+                    </div>

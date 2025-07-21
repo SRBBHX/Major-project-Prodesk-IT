@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCNSoft - Software Development Company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="../ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="#locations">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="#where-to-start">Where to Start</a></li>
+                                        <li><a href="#pricing-models">Pricing Models</a></li>
+                                        <li><a href="#software-development-approach">Approach to Software Development</a></li>
+                                        <li><a href="#security-management-approach">Approach to Security Management</a></li>
+                                        <li><a href="#technology-partnership">Technology Partnership</a></li>
+                                        <li><a href="#sustainability-policy">Sustainability Policy</a></li>
+                                        <li><a href="#faq">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="#testimonials">Testimonials</a></li>
+                                        <li><a href="#awards">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="#become-agent">Become Our Agent</a></li>
+                                        <li><a href="#referral-program">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="#thought-leadership">Thought Leadership</a></li>
+                                        <li><a href="#news">News</a></li>
+                                        <li><a href="#for-journalists">For Journalists</a></li>
+                                        <li><a href="#experts-media">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-footer about-dropdown-footer">
+                                <div class="dropdown-search-section">
+                                    <h5>Find exactly what you need:</h5>
+                                    <div class="search-container">
+                                        <input type="text" class="search-input" placeholder="Search" id="about-search">
+                                        <button class="search-btn" type="button">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get <a href="#services" class="dropdown-link-inline">software development services</a>, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="#services">Staff Augmentation</a></li>
+                                        <li><a href="#services">Dedicated Teams</a></li>
+                                        <li><a href="#services">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="#services">Cloud Solutions</a></li>
+                                        <li><a href="#services">Data Analytics & BI</a></li>
+                                        <li><a href="#services">AI Development</a></li>
+                                        <li><a href="#services">DevOps & Automation</a></li>
+                                        <li><a href="#services">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="#services">Enterprise Software</a></li>
+                                        <li><a href="#services">Legacy Modernization</a></li>
+                                        <li><a href="#services">System Integration</a></li>
+                                        <li><a href="#services">Digital Transformation</a></li>
+                                        <li><a href="#services">IT Consulting</a></li>
+                                        <li><a href="#services">Cybersecurity</a></li>
+                                        <li><a href="#services">ERP Development</a></li>
+                                        <li><a href="#services">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="dropdown-footer">
+                                <div class="dropdown-cta">
+                                    <div class="cta-icon">
+                                        <i class="fas fa-rocket"></i>
+                                    </div>
+                                    <div class="cta-content">
+                                        <h5>Ready to Start Your Project?</h5>
+                                        <p>We built solutions for Fortune 500 companies. <a href="#contact" class="cta-link">Read case study.</a></p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-all-services">
+                                    <a href="#services" class="all-services-link">
+                                        All Services <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfolio.html" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        Custom Software Development 
+                        <span class="highlight">That Drives Business Growth</span>
+                    </h1>
+                    <p class="hero-description">
+                        We deliver tailored software solutions that transform your business operations, 
+                        enhance customer experience, and accelerate digital transformation. 
+                        With 30+ years of expertise, we turn your vision into reality.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Years of Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">700+</span>
+                            <span class="stat-label">IT Professionals</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Successful Projects</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+                        <a href="#services" class="btn btn-secondary">Explore Services</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-visual">
+                        <div class="floating-card card-1">
+                            <i class="fas fa-code"></i>
+                            <span>Custom Development</span>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile Apps</span>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud Solutions</span>
+                        </div>
+                        <div class="floating-card card-4">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </div>
+                        <div class="hero-main-visual">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive software development solutions tailored to your business needs
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Custom Software Development</h3>
+                    <p class="service-description">
+                        Tailored software solutions designed to meet your unique business requirements, 
+                        from enterprise applications to specialized tools.
+                    </p>
+                    <ul class="service-features">
+                        <li>Enterprise Software</li>
+                        <li>Legacy System Modernization</li>
+                        <li>API Development & Integration</li>
+                        <li>Microservices Architecture</li>
+                    </ul>
+                    <a href="custom-software-development.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Modern, responsive web applications and websites that deliver exceptional 
+                        user experiences across all devices and platforms.
+                    </p>
+                    <ul class="service-features">
+                        <li>React, Angular, Vue.js</li>
+                        <li>E-commerce Platforms</li>
+                        <li>Progressive Web Apps</li>
+                        <li>CMS Development</li>
+                    </ul>
+                    <a href="web-development.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Mobile App Development</h3>
+                    <p class="service-description">
+                        Native and cross-platform mobile applications that engage users and 
+                        drive business growth on iOS and Android platforms.
+                    </p>
+                    <ul class="service-features">
+                        <li>iOS & Android Native</li>
+                        <li>React Native & Flutter</li>
+                        <li>Mobile UI/UX Design</li>
+                        <li>App Store Optimization</li>
+                    </ul>
+                    <a href="mobile-app-development.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="service-title">Cloud Solutions</h3>
+                    <p class="service-description">
+                        Scalable cloud infrastructure and migration services to optimize 
+                        performance, reduce costs, and enhance security.
+                    </p>
+                    <ul class="service-features">
+                        <li>AWS, Azure, Google Cloud</li>
+                        <li>Cloud Migration</li>
+                        <li>DevOps & CI/CD</li>
+                        <li>Serverless Architecture</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="service-title">Data Analytics & BI</h3>
+                    <p class="service-description">
+                        Transform your data into actionable insights with advanced analytics, 
+                        business intelligence, and machine learning solutions.
+                    </p>
+                    <ul class="service-features">
+                        <li>Business Intelligence</li>
+                        <li>Data Warehousing</li>
+                        <li>Machine Learning</li>
+                        <li>Real-time Analytics</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="service-title">IT Consulting</h3>
+                    <p class="service-description">
+                        Strategic IT consulting to help you make informed technology decisions 
+                        and optimize your digital transformation journey.
+                    </p>
+                    <ul class="service-features">
+                        <li>Technology Strategy</li>
+                        <li>Digital Transformation</li>
+                        <li>Architecture Design</li>
+                        <li>Project Management</li>
+                    </ul>
+                    <a href="#contact" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <h3>Ready to Transform Your Business?</h3>
+                <p>Let's discuss how our expertise can help you achieve your goals</p>
+                <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+ 
+
+    <!-- Industries Section -->
+    <section class="industries" id="industries">
+        <div class="industries-container">
+            <div class="section-header">
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">
+                    Transforming businesses across diverse industries with cutting-edge software solutions
+                </p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="industry-title">Healthcare</h3>
+                    <p class="industry-description">
+                        HIPAA-compliant solutions for hospitals, clinics, and healthcare providers. 
+                        From EHR systems to telemedicine platforms.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Electronic Health Records</li>
+                        <li>Telemedicine Solutions</li>
+                        <li>Medical Device Integration</li>
+                        <li>Patient Management Systems</li>
+                    </ul>
+                    <div class="industry-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Healthcare Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="industry-title">Finance & Banking</h3>
+                    <p class="industry-description">
+                        Secure, compliant financial solutions including trading platforms, 
+                        payment systems, and digital banking applications.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Trading Platforms</li>
+                        <li>Payment Processing</li>
+                        <li>Risk Management Systems</li>
+                        <li>Blockchain Solutions</li>
+                    </ul>
+                    <div class="industry-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">35+</span>
+                            <span class="stat-label">Financial Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="industry-title">E-commerce & Retail</h3>
+                    <p class="industry-description">
+                        Scalable e-commerce solutions with AI-powered personalization, 
+                        inventory management, and omnichannel experiences.
+                    </p>
+                    <ul class="industry-features">
+                        <li>E-commerce Platforms</li>
+                        <li>Inventory Management</li>
+                        <li>AI Personalization</li>
+                        <li>Mobile Commerce</li>
+                    </ul>
+                    <div class="industry-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">80+</span>
+                            <span class="stat-label">E-commerce Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="industry-title">Education & eLearning</h3>
+                    <p class="industry-description">
+                        Interactive learning management systems, virtual classrooms, 
+                        and educational technology solutions for modern learning.
+                    </p>
+                    <ul class="industry-features">
+                        <li>LMS Development</li>
+                        <li>Virtual Classrooms</li>
+                        <li>Assessment Platforms</li>
+                        <li>Mobile Learning Apps</li>
+                    </ul>
+                    <div class="industry-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">45+</span>
+                            <span class="stat-label">Education Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="industry-title">Manufacturing</h3>
+                    <p class="industry-description">
+                        Industry 4.0 solutions including IoT integration, supply chain 
+                        optimization, and smart factory implementations.
+                    </p>
+                    <ul class="industry-features">
+                        <li>IoT Integration</li>
+                        <li>Supply Chain Management</li>
+                        <li>Quality Control Systems</li>
+                        <li>Predictive Maintenance</li>
+                    </ul>
+                    <div class="industry-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">60+</span>
+                            <span class="stat-label">Manufacturing Projects</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="industry-title">Logistics & Transportation</h3>
+                    <p class="industry-description">
+                        End-to-end logistics solutions including fleet management, 
+                        route optimization, and real-time tracking systems.
+                    </p>
+                    <ul class="industry-features">
+                        <li>Fleet Management</li>
+                        <li>Route Optimization</li>
+                        <li>Real-time Tracking</li>
+                        <li>Warehouse Management</li>
+                    </ul>
+                    <div class="industry-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">40+</span>
+                            <span class="stat-label">Logistics Projects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="industries-cta">
+                <h3>Ready to Transform Your Industry?</h3>
+                <p>Let's discuss how our expertise can help you achieve your goals</p>
+                <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta" id="contact">
+        <div class="contact-cta-container">
+            <div class="contact-cta-content">
+                <div class="contact-cta-text">
+                    <h2 class="contact-cta-title">Ready to Start Your Project?</h2>
+                    <p class="contact-cta-description">
+                        Let's discuss how our expertise can help you achieve your business goals. 
+                        Get a free consultation with our experts and discover the possibilities.
+                    </p>
+                    <div class="contact-cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free 30-minute consultation</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Custom solution proposal</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No obligation quote</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-cta-form">
+                    <form class="cta-contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-input" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-textarea" placeholder="Tell us about your project" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Get Free Consultation
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../ASSETS/IMAGES/scnsoft-logo.png" alt="SRBBHX Logo">
+                        <span class="footer-logo-text">SCNSoft</span>
+                    </div>
+                    <p class="footer-description">
+                        Leading software development company with 30+ years of experience in delivering 
+                        innovative solutions that drive business growth and digital transformation.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                        <li><a href="web-development.html">Web Development</a></li>
+                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                        <li><a href="#services">Cloud Solutions</a></li>
+                        <li><a href="#services">AI Development</a></li>
+                        <li><a href="#services">DevOps & Automation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about-company.html">About Us</a></li>
+                        <li><a href="mission.html">Our Mission</a></li>
+                        <li><a href="leadership.html">Leadership</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="#news">News</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Industries</h4>
+                    <ul class="footer-links">
+                        <li><a href="#industries">Healthcare</a></li>
+                        <li><a href="#industries">Finance</a></li>
+                        <li><a href="#industries">E-commerce</a></li>
+                        <li><a href="#industries">Education</a></li>
+                        <li><a href="#industries">Manufacturing</a></li>
+                        <li><a href="#industries">Logistics</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Tech Street, Silicon Valley, CA 94000</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@srbbhx.com</span>
+                        </div>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h4>Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" class="newsletter-input" placeholder="Your email">
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2024 SRBBHX. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="/Major Project/docs/JAVASCRIPT/script.js"></script>
+</body>
+</html>

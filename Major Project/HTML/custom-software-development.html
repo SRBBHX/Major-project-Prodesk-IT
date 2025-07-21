@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Software Development - SRBBHX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .service-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .overview-text h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .overview-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+        .overview-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1rem;
+        }
+        .overview-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #7E1891;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        .overview-visual {
+            text-align: center;
+        }
+        .technologies-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .tech-card:hover {
+            transform: translateY(-5px);
+        }
+        .tech-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .tech-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .tech-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .process-section {
+            padding: 80px 0;
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        .benefits-section {
+            background: #F5EFFF;
+            padding: 80px 0;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+        }
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background: #7E1891;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .benefit-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .benefit-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .benefit-content p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .industries-section {
+            padding: 80px 0;
+        }
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .industry-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .industry-card:hover {
+            border-color: #7E1891;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .industry-icon {
+            font-size: 2rem;
+            color: #7E1891;
+            margin-bottom: 1rem;
+        }
+        .industry-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .cta-button {
+            background: white;
+            color: #7E1891;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .service-overview, .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .tech-grid, .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+           <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Custom Software Development</h1>
+            <p class="page-subtitle">
+                Tailored software solutions designed to meet your unique business requirements, 
+                from enterprise applications to specialized tools that drive growth and efficiency
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="service-overview">
+                <div class="overview-text">
+                    <h2>Build Software That Fits Your Business Perfectly</h2>
+                    <p>
+                        Off-the-shelf software can't always meet your unique business needs. Our custom software 
+                        development services create solutions that are perfectly aligned with your processes, 
+                        goals, and vision.
+                    </p>
+                    <p>
+                        With over 30 years of experience, we've helped businesses across industries transform 
+                        their operations through custom software that scales with their growth and adapts to 
+                        changing market demands.
+                    </p>
+                    <ul class="overview-features">
+                        <li>Fully customized to your business requirements</li>
+                        <li>Scalable architecture for future growth</li>
+                        <li>Integration with existing systems</li>
+                        <li>Ongoing support and maintenance</li>
+                        <li>Agile development methodology</li>
+                        <li>Quality assurance and testing</li>
+                    </ul>
+                </div>
+                <div class="overview-visual">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #7E1891, #A294F9); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-code" style="font-size: 4rem; color: white; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="technologies-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Technologies We Master</h2>
+                <p class="section-subtitle">
+                    We leverage cutting-edge technologies to build robust, scalable, and future-ready software solutions
+                </p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="tech-name">Java</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-name">Python</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="tech-name">JavaScript</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-name">React</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <div class="tech-name">Angular</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-name">Node.js</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="tech-name">SQL/NoSQL</div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div class="tech-name">AWS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="process-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Development Process</h2>
+                <p class="section-subtitle">
+                    A proven methodology that ensures successful project delivery from concept to deployment
+                </p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Discovery & Planning</h3>
+                    <p class="step-description">
+                        We analyze your requirements, understand your business goals, and create a detailed 
+                        project roadmap with clear milestones and deliverables.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Design & Architecture</h3>
+                    <p class="step-description">
+                        Our architects design scalable system architecture while our UX/UI designers create 
+                        intuitive interfaces that enhance user experience.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Development & Testing</h3>
+                    <p class="step-description">
+                        Using agile methodology, we develop your software in iterative sprints with continuous 
+                        testing to ensure quality and functionality.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Deployment & Integration</h3>
+                    <p class="step-description">
+                        We deploy your software to production environments and integrate it seamlessly with 
+                        your existing systems and workflows.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3 class="step-title">Training & Support</h3>
+                    <p class="step-description">
+                        We provide comprehensive training for your team and ongoing support to ensure smooth 
+                        operation and continuous improvement.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3 class="step-title">Maintenance & Evolution</h3>
+                    <p class="step-description">
+                        Our relationship continues with regular maintenance, updates, and enhancements to keep 
+                        your software current and competitive.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Custom Software?</h2>
+                <p class="section-subtitle">
+                    Discover the advantages of custom software development over off-the-shelf solutions
+                </p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Perfect Fit</h3>
+                        <p>
+                            Custom software is built specifically for your business processes, ensuring 
+                            perfect alignment with your operational needs and workflows.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Scalability</h3>
+                        <p>
+                            Grow without limitations. Custom software scales with your business, 
+                            accommodating increased users, data, and functionality as needed.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Seamless Integration</h3>
+                        <p>
+                            Integrate effortlessly with your existing systems, databases, and third-party 
+                            applications without compatibility issues.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Competitive Advantage</h3>
+                        <p>
+                            Gain a competitive edge with unique features and capabilities that your 
+                            competitors using standard software can't match.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Cost-Effective</h3>
+                        <p>
+                            Eliminate recurring licensing fees and reduce long-term costs while getting 
+                            exactly what you need without paying for unused features.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Enhanced Security</h3>
+                        <p>
+                            Implement security measures tailored to your specific requirements and 
+                            industry compliance standards for maximum protection.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="industries-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">
+                    Our custom software solutions power businesses across diverse industries
+                </p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="industry-name">Healthcare</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="industry-name">Finance</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="industry-name">E-commerce</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="industry-name">Education</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="industry-name">Manufacturing</div>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="industry-name">Logistics</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="content-container">
+            <div class="cta-content">
+                <h2>Ready to Build Your Custom Solution?</h2>
+                <p>
+                    Let's discuss your project requirements and create software that transforms your business
+                </p>
+                <a href="#contact" class="cta-button">Get Free Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile App Development - SRBBHX</title>
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .service-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .overview-text h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .mobile-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #F5EFFF;
+            border-radius: 15px;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .overview-visual {
+            text-align: center;
+        }
+        .platforms-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .platform-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .platform-card:hover {
+            transform: translateY(-10px);
+        }
+        .platform-icon {
+            width: 100px;
+            height: 100px;
+            background: #7E1891;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .platform-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        .platform-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .platform-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .platform-features {
+            list-style: none;
+        }
+        .platform-features li {
+            padding: 0.3rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .platform-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #7E1891;
+            font-weight: bold;
+        }
+        .services-section {
+            padding: 80px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .service-card {
+            background: #F5EFFF;
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        .process-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        .step-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .step-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .technologies-section {
+            padding: 80px 0;
+        }
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .tech-category {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .tech-category h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .tech-category i {
+            font-size: 2rem;
+            color: #7E1891;
+        }
+        .tech-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem;
+            background: #F5EFFF;
+            border-radius: 10px;
+        }
+        .tech-item i {
+            font-size: 1.5rem;
+            color: #7E1891;
+        }
+        .tech-name {
+            font-weight: 600;
+            color: #333;
+        }
+        .portfolio-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        .portfolio-image {
+            height: 250px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .portfolio-image i {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+        }
+        .portfolio-content {
+            padding: 2rem;
+        }
+        .portfolio-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-category {
+            color: #7E1891;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .portfolio-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .portfolio-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .feature-tag {
+            background: #F5EFFF;
+            color: #7E1891;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-button {
+            background: white;
+            color: #7E1891;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .cta-button.secondary:hover {
+            background: white;
+            color: #7E1891;
+        }
+        @media (max-width: 768px) {
+            .service-overview, .services-grid, .tech-categories {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .platforms-grid, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .mobile-stats {
+                grid-template-columns: 1fr;
+            }
+            .tech-list {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Mobile App Development</h1>
+            <p class="page-subtitle">
+                Native and cross-platform mobile applications that engage users and drive business growth 
+                on iOS and Android platforms with exceptional performance and user experience
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="service-overview">
+                <div class="overview-text">
+                    <h2>Build Mobile Apps That Users Love</h2>
+                    <p>
+                        In the mobile-first world, your app is often the primary touchpoint with your customers. 
+                        Our mobile app development services create powerful, intuitive applications that deliver 
+                        exceptional user experiences and drive meaningful business results.
+                    </p>
+                    <p>
+                        From concept to App Store, we handle every aspect of mobile app development, ensuring 
+                        your app not only looks great but performs flawlessly across all devices and platforms.
+                    </p>
+                    <div class="mobile-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">200+</span>
+                            <span class="stat-label">Apps Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">4.8/5</span>
+                            <span class="stat-label">Average App Rating</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10M+</span>
+                            <span class="stat-label">App Downloads</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-visual">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #7E1891, #A294F9); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-mobile-alt" style="font-size: 4rem; color: white; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Options -->
+    <section class="platforms-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Platform Development Options</h2>
+                <p class="section-subtitle">
+                    Choose the right approach for your mobile app based on your requirements and target audience
+                </p>
+            </div>
+            
+            <div class="platforms-grid">
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3 class="platform-title">iOS Native Development</h3>
+                    <p class="platform-description">
+                        Build high-performance iOS apps using Swift and Objective-C, leveraging the full 
+                        power of Apple's ecosystem and latest iOS features.
+                    </p>
+                    <ul class="platform-features">
+                        <li>Optimal performance and user experience</li>
+                        <li>Access to all iOS-specific features</li>
+                        <li>App Store optimization</li>
+                        <li>Swift and Objective-C expertise</li>
+                        <li>iOS design guidelines compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3 class="platform-title">Android Native Development</h3>
+                    <p class="platform-description">
+                        Create powerful Android applications using Kotlin and Java, optimized for the 
+                        diverse Android ecosystem and Google Play Store.
+                    </p>
+                    <ul class="platform-features">
+                        <li>Maximum Android platform integration</li>
+                        <li>Material Design implementation</li>
+                        <li>Google Play Store optimization</li>
+                        <li>Kotlin and Java proficiency</li>
+                        <li>Multi-device compatibility</li>
+                    </ul>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="platform-title">Cross-Platform Development</h3>
+                    <p class="platform-description">
+                        Develop once, deploy everywhere with React Native and Flutter, reducing development 
+                        time while maintaining native-like performance.
+                    </p>
+                    <ul class="platform-features">
+                        <li>Single codebase for both platforms</li>
+                        <li>Faster time-to-market</li>
+                        <li>Cost-effective development</li>
+                        <li>React Native and Flutter expertise</li>
+                        <li>Near-native performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Services -->
+    <section class="services-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mobile App Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive mobile development services covering every aspect of your app journey
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="service-title">App Strategy & Consulting</h3>
+                    <p class="service-description">
+                        Strategic planning and technical consulting to define your app's vision, target audience, 
+                        features, and go-to-market strategy for maximum success.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">
+                        User-centered design that creates intuitive, engaging interfaces optimized for mobile 
+                        interactions and platform-specific design guidelines.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="service-title">Custom App Development</h3>
+                    <p class="service-description">
+                        Full-cycle mobile app development from architecture design to deployment, using 
+                        the latest technologies and best practices.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="service-title">API Integration</h3>
+                    <p class="service-description">
+                        Seamless integration with third-party services, payment gateways, social media 
+                        platforms, and backend systems.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3 class="service-title">Testing & QA</h3>
+                    <p class="service-description">
+                        Comprehensive testing across devices, platforms, and scenarios to ensure your 
+                        app performs flawlessly in real-world conditions.
+                    </p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="service-title">App Store Deployment</h3>
+                    <p class="service-description">
+                        Complete App Store and Google Play Store submission process, including optimization 
+                        for better visibility and downloads.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="process-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mobile Development Process</h2>
+                <p class="section-subtitle">
+                    A proven methodology that ensures successful app delivery from concept to App Store
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Discovery</h3>
+                    <p class="step-description">
+                        Understand your business goals, target users, and technical requirements to create 
+                        a comprehensive app strategy.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Design</h3>
+                    <p class="step-description">
+                        Create wireframes, prototypes, and visual designs that provide exceptional user 
+                        experience and align with platform guidelines.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Development</h3>
+                    <p class="step-description">
+                        Build your app using agile methodology with regular updates, code reviews, and 
+                        continuous integration for quality assurance.
+                    </p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title

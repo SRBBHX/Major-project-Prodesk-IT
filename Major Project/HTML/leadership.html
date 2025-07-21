@@ -1,0 +1,740 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership Team - SRBBHX</title>
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .leadership-intro {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .leadership-intro h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .leadership-intro p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+        .leader-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .leader-card:hover {
+            transform: translateY(-10px);
+        }
+        .leader-image {
+            height: 300px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .leader-image i {
+            font-size: 4rem;
+            color: white;
+            opacity: 0.8;
+        }
+        .leader-content {
+            padding: 2rem;
+        }
+        .leader-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .leader-title {
+            color: #7E1891;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .leader-bio {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .leader-expertise {
+            margin-bottom: 1.5rem;
+        }
+        .leader-expertise h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .expertise-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .expertise-tag {
+            background: #F5EFFF;
+            color: #7E1891;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .leader-social {
+            display: flex;
+            gap: 1rem;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover {
+            background: #A294F9;
+            transform: translateY(-2px);
+        }
+        .values-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .value-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .value-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .value-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .value-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        .advisory-section {
+            padding: 80px 0;
+        }
+        .advisory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .advisor-card {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+        }
+        .advisor-image {
+            width: 100px;
+            height: 100px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .advisor-image i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        .advisor-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .advisor-title {
+            color: #7E1891;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .advisor-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .leadership-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .values-grid, .advisory-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .leadership-intro h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Leadership Team</h1>
+            <p class="page-subtitle">
+                Meet the visionary leaders driving SRBBHX's mission to transform businesses 
+                through innovative software solutions and exceptional client service
+            </p>
+        </div>
+    </section>
+
+    <!-- Leadership Introduction -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="leadership-intro">
+                <h2>Experienced Leaders, Proven Results</h2>
+                <p>
+                    Our leadership team combines decades of industry experience with a passion for innovation 
+                    and excellence. Together, they guide SRBBHX's strategic vision, foster our company culture, 
+                    and ensure we continue to deliver world-class software solutions that drive our clients' success.
+                </p>
+            </div>
+            
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Michael Rodriguez</h3>
+                        <div class="leader-title">Chief Executive Officer & Founder</div>
+                        <p class="leader-bio">
+                            With over 25 years in software development and business leadership, Michael founded 
+                            SRBBHX with a vision to bridge the gap between complex business challenges and 
+                            innovative technology solutions. Under his leadership, the company has grown from 
+                            a small consultancy to a global software development powerhouse.
+                        </p>
+                        <div class="leader-expertise">
+                            <h4>Expertise:</h4>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Strategic Planning</span>
+                                <span class="expertise-tag">Business Development</span>
+                                <span class="expertise-tag">Digital Transformation</span>
+                                <span class="expertise-tag">Leadership</span>
+                            </div>
+                        </div>
+                        <div class="leader-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Sarah Chen</h3>
+                        <div class="leader-title">Chief Technology Officer</div>
+                        <p class="leader-bio">
+                            Sarah brings 20+ years of technical expertise and innovation leadership to SRBBHX. 
+                            She oversees our technology strategy, ensures we stay at the forefront of emerging 
+                            technologies, and leads our technical teams in delivering cutting-edge solutions 
+                            for our clients worldwide.
+                        </p>
+                        <div class="leader-expertise">
+                            <h4>Expertise:</h4>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Software Architecture</span>
+                                <span class="expertise-tag">Cloud Computing</span>
+                                <span class="expertise-tag">AI & Machine Learning</span>
+                                <span class="expertise-tag">Technical Strategy</span>
+                            </div>
+                        </div>
+                        <div class="leader-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">David Thompson</h3>
+                        <div class="leader-title">Chief Operating Officer</div>
+                        <p class="leader-bio">
+                            David ensures operational excellence across all SRBBHX divisions. With extensive 
+                            experience in scaling technology companies, he optimizes our processes, manages 
+                            global operations, and maintains the high-quality standards that our clients 
+                            expect from every project.
+                        </p>
+                        <div class="leader-expertise">
+                            <h4>Expertise:</h4>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Operations Management</span>
+                                <span class="expertise-tag">Process Optimization</span>
+                                <span class="expertise-tag">Quality Assurance</span>
+                                <span class="expertise-tag">Global Scaling</span>
+                            </div>
+                        </div>
+                        <div class="leader-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Emily Johnson</h3>
+                        <div class="leader-title">Chief Financial Officer</div>
+                        <p class="leader-bio">
+                            Emily oversees SRBBHX's financial strategy and operations, ensuring sustainable 
+                            growth and sound fiscal management. Her expertise in financial planning and 
+                            analysis helps guide strategic decisions and investment in new technologies 
+                            and market opportunities.
+                        </p>
+                        <div class="leader-expertise">
+                            <h4>Expertise:</h4>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Financial Strategy</span>
+                                <span class="expertise-tag">Investment Planning</span>
+                                <span class="expertise-tag">Risk Management</span>
+                                <span class="expertise-tag">Corporate Finance</span>
+                            </div>
+                        </div>
+                        <div class="leader-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">James Wilson</h3>
+                        <div class="leader-title">Chief Marketing Officer</div>
+                        <p class="leader-bio">
+                            James leads SRBBHX's global marketing and brand strategy, building strong 
+                            relationships with clients and partners worldwide. His innovative approach 
+                            to digital marketing and thought leadership has positioned SRBBHX as an 
+                            industry leader in software development.
+                        </p>
+                        <div class="leader-expertise">
+                            <h4>Expertise:</h4>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Brand Strategy</span>
+                                <span class="expertise-tag">Digital Marketing</span>
+                                <span class="expertise-tag">Client Relations</span>
+                                <span class="expertise-tag">Market Analysis</span>
+                            </div>
+                        </div>
+                        <div class="leader-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="leader-card">
+                    <div class="leader-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="leader-content">
+                        <h3 class="leader-name">Lisa Martinez</h3>
+                        <div class="leader-title">Chief Human Resources Officer</div>
+                        <p class="leader-bio">
+                            Lisa champions SRBBHX's people-first culture, overseeing talent acquisition, 
+                            employee development, and organizational culture initiatives. Her leadership 
+                            ensures we attract, develop, and retain the best talent in the industry while 
+                            maintaining our core values and inclusive workplace.
+                        </p>
+                        <div class="leader-expertise">
+                            <h4>Expertise:</h4>
+                            <div class="expertise-tags">
+                                <span class="expertise-tag">Talent Management</span>
+                                <span class="expertise-tag">Organizational Culture</span>
+                                <span class="expertise-tag">Employee Development</span>
+                                <span class="expertise-tag">Diversity & Inclusion</span>
+                            </div>
+                        </div>
+                        <div class="leader-social">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Values -->
+    <section class="values-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership Principles</h2>
+                <p class="section-subtitle">
+                    The core principles that guide our leadership approach and decision-making
+                </p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="value-title">Visionary Thinking</h3>
+                    <p class="value-description">
+                        We anticipate future trends and technologies, positioning SRBBHX and our 
+                        clients for long-term success in an evolving digital landscape.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">People-Centric Leadership</h3>
+                    <p class="value-description">
+                        Our success is built on empowering our team members, fostering growth, 
+                        and creating an environment where everyone can thrive and contribute.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Client Partnership</h3>
+                    <p class="value-description">
+                        We build lasting relationships with our clients, understanding their 
+                        challenges deeply and working as true partners in their success.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation Drive</h3>
+                    <p class="value-description">
+                        We continuously push boundaries, embrace new technologies, and encourage 
+                        creative problem-solving across all levels of the organization.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Ethical Standards</h3>
+                    <p class="value-description">
+                        We maintain the highest ethical standards in all our business practices, 
+                        ensuring transparency, integrity, and accountability in everything we do.
+                    </p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="value-title">Results-Oriented</h3>
+                    <p class="value-description">
+                        We focus on delivering measurable results and value for our clients, 
+                        stakeholders, and team members through strategic execution and accountability.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advisory Board -->
+    <section class="advisory-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Advisory Board</h2>
+                <p class="section-subtitle">
+                    Industry experts and thought leaders who provide strategic guidance and insights
+                </p>
+            </div>
+            
+            <div class="advisory-grid">
+                <div class="advisor-card">
+                    <div class="advisor-image">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="advisor-name">Dr. Robert Kim</h3>
+                    <div class="advisor-title">Former CTO, Fortune 500 Technology Company</div>
+                    <p class="advisor-description">
+                        Provides strategic technology guidance and insights on emerging trends in 
+                        enterprise software development and digital transformation.
+                    </p>
+                </div>
+                
+                <div class="advisor-card">
+                    <div class="advisor-image">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="advisor-name">Maria Gonzalez</h3>
+                    <div class="advisor-title">Venture Capital Partner & Former Startup Founder</div>
+                    <p class="advisor-description">
+                        Offers expertise in scaling technology companies, market expansion strategies, 
+                        and investment opportunities in the software development sector.
+                    </p>
+                </div>
+                
+                <div class="advisor-card">
+                    <div class="advisor-image">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="advisor-name">Professor Alan Davis</h3>
+                    <div class="advisor-title">Computer Science Department Head, MIT</div>
+                    <p class="advisor-description">
+                        Contributes academic insights on cutting-edge research in artificial intelligence, 
+                        machine learning, and software engineering methodologies.
+                    </p>
+                </div>
+                
+                <div class="advisor-card">
+                    <div class="advisor-image">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="advisor-name">Jennifer Lee</h3>
+                    <div class="advisor-title">Former Chief Digital Officer, Global Consulting Firm</div>
+                    <p class="advisor-description">
+                        Provides guidance on digital transformation strategies, client relationship 
+                        management, and global market expansion opportunities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script

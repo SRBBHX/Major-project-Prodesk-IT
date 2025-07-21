@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services - SRBBHX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .service-overview {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+        .overview-text h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .overview-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .overview-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: #F5EFFF;
+            border-radius: 10px;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .overview-visual {
+            text-align: center;
+        }
+        .services-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        .service-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .service-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .service-features {
+            list-style: none;
+        }
+        .service-features li {
+            padding: 0.3rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .service-features li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #7E1891;
+            font-weight: bold;
+        }
+        .technologies-section {
+            padding: 80px 0;
+        }
+        .tech-categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .tech-category {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .tech-category h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .tech-tag {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #7E1891;
+            font-weight: 600;
+            border: 1px solid rgba(126, 24, 145, 0.2);
+        }
+        .process-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .process-timeline {
+            position: relative;
+            margin-top: 3rem;
+        }
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 0 2rem;
+        }
+        .timeline-number {
+            width: 60px;
+            height: 60px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+        .timeline-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        .portfolio-section {
+            padding: 80px 0;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .portfolio-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+        .portfolio-image {
+            height: 200px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .portfolio-image i {
+            font-size: 3rem;
+            color: white;
+            opacity: 0.8;
+        }
+        .portfolio-content {
+            padding: 1.5rem;
+        }
+        .portfolio-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .portfolio-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+        .portfolio-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .portfolio-tag {
+            background: #F5EFFF;
+            color: #7E1891;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .cta-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .cta-button {
+            background: white;
+            color: #7E1891;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .cta-button.secondary:hover {
+            background: white;
+            color: #7E1891;
+        }
+        @media (max-width: 768px) {
+            .service-overview, .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .tech-categories, .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .overview-stats {
+                grid-template-columns: 1fr;
+            }
+            .timeline-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            .timeline-content {
+                margin: 1rem 0;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Web Development Services</h1>
+            <p class="page-subtitle">
+                Modern, responsive web applications and websites that deliver exceptional user experiences 
+                across all devices and platforms, driving engagement and business growth
+            </p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="service-overview">
+                <div class="overview-text">
+                    <h2>Build Powerful Web Solutions That Drive Results</h2>
+                    <p>
+                        In today's digital landscape, your website is often the first interaction customers 
+                        have with your brand. Our web development services create stunning, high-performance 
+                        websites and web applications that not only look great but deliver measurable business results.
+                    </p>
+                    <p>
+                        From simple corporate websites to complex web applications, we leverage the latest 
+                        technologies and best practices to ensure your web presence stands out in the 
+                        competitive digital marketplace.
+                    </p>
+                    <div class="overview-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Websites Delivered</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span class="stat-label">Uptime Guarantee</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3x</span>
+                            <span class="stat-label">Faster Load Times</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="overview-visual">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #7E1891, #A294F9); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-globe" style="font-size: 4rem; color: white; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Web Development Services -->
+    <section class="services-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Web Development Services</h2>
+                <p class="section-subtitle">
+                    Comprehensive web solutions tailored to your business needs and objectives
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Custom Web Applications</h3>
+                    <p class="service-description">
+                        Powerful, scalable web applications built with modern frameworks and technologies 
+                        to meet your specific business requirements.
+                    </p>
+                    <ul class="service-features">
+                        <li>Single Page Applications (SPA)</li>
+                        <li>Progressive Web Apps (PWA)</li>
+                        <li>Real-time applications</li>
+                        <li>API-first architecture</li>
+                        <li>Microservices integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="service-title">E-commerce Development</h3>
+                    <p class="service-description">
+                        Complete e-commerce solutions that drive sales and provide seamless shopping 
+                        experiences for your customers.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom shopping carts</li>
+                        <li>Payment gateway integration</li>
+                        <li>Inventory management</li>
+                        <li>Multi-vendor platforms</li>
+                        <li>Mobile commerce optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <h3 class="service-title">Content Management Systems</h3>
+                    <p class="service-description">
+                        User-friendly CMS solutions that empower you to manage your website content 
+                        easily without technical expertise.
+                    </p>
+                    <ul class="service-features">
+                        <li>Custom CMS development</li>
+                        <li>WordPress customization</li>
+                        <li>Headless CMS solutions</li>
+                        <li>Multi-site management</li>
+                        <li>SEO optimization tools</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Responsive Web Design</h3>
+                    <p class="service-description">
+                        Mobile-first designs that provide optimal viewing experiences across all 
+                        devices and screen sizes.
+                    </p>
+                    <ul class="service-features">
+                        <li>Mobile-first approach</li>
+                        <li>Cross-browser compatibility</li>
+                        <li>Touch-friendly interfaces</li>
+                        <li>Performance optimization</li>
+                        <li>Accessibility compliance</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="service-title">API Development & Integration</h3>
+                    <p class="service-description">
+                        Robust APIs and seamless third-party integrations to connect your web 
+                        applications with other systems and services.
+                    </p>
+                    <ul class="service-features">
+                        <li>RESTful API development</li>
+                        <li>GraphQL implementation</li>
+                        <li>Third-party integrations</li>
+                        <li>Webhook implementations</li>
+                        <li>API documentation</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">
+                        Speed optimization and performance tuning to ensure your website loads 
+                        quickly and provides excellent user experience.
+                    </p>
+                    <ul class="service-features">
+                        <li>Page speed optimization</li>
+                        <li>Image compression</li>
+                        <li>Caching strategies</li>
+                        <li>CDN implementation</li>
+                        <li>Core Web Vitals optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies -->
+    <section class="technologies-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Technologies We Use</h2>
+                <p class="section-subtitle">
+                    Cutting-edge technologies and frameworks to build modern, scalable web solutions
+                </p>
+            </div>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Frontend Technologies</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Angular</span>
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">Sass</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Backend Technologies</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PHP</span>
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Ruby</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">Django</span>
+                    </div>
+                </div>
+                
+                <div class="tech-category">
+                    <h3>Databases & Cloud</h3>
+                    <div class="tech-list">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Google Cloud</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="process-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Web Development Process</h2>
+                <p class="section-subtitle">
+                    A systematic approach that ensures successful project delivery from concept to launch
+                </p>
+            </div>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Discovery & Strategy</h3>
+                        <p class="timeline-description">
+                            We analyze your business goals, target audience, and technical requirements to create 
+                            a comprehensive project strategy and roadmap.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Design & Prototyping</h3>
+                        <p class="timeline-description">
+                            Our designers create wireframes, mockups, and interactive prototypes to visualize 
+                            the user experience and interface design.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Development & Coding</h3>
+                        <p class="timeline-description">
+                            Our developers build your website using agile methodology, with regular updates 
+                            and continuous integration for quality assurance.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Testing & Quality Assurance</h3>
+                        <p class="timeline

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partners - SRBBHX Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .partner-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .category-card {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        .category-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .category-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .category-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .category-count {
+            color: #7E1891;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .category-description {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .partner-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .partner-card:hover {
+            transform: translateY(-10px);
+        }
+        .partner-logo {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .partner-logo i {
+            font-size: 3rem;
+            color: white;
+        }
+        .partner-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        .partner-type {
+            color: #7E1891;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .partner-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .partner-link {
+            color: #7E1891;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        .partner-link:hover {
+            color: #A294F9;
+        }
+        .technology-partners {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .tech-partner {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .tech-partner:hover {
+            transform: translateY(-5px);
+        }
+        .tech-logo {
+            width: 60px;
+            height: 60px;
+            background: #7E1891;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        .tech-logo i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .tech-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .partnership-benefits {
+            padding: 80px 0;
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .benefit-card {
+            background: #F5EFFF;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(126, 24, 145, 0.1);
+        }
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .benefit-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        .benefit-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .benefit-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        .become-partner {
+            background: linear-gradient(135deg, #7E1891, #A294F9);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        .become-partner h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .become-partner p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .partner-cta {
+            background: white;
+            color: #7E1891;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .partner-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            .partner-categories {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            .tech-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .partner-categories {
+                grid-template-columns: 1fr;
+            }
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+           <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Our Partners</h1>
+            <p class="page-subtitle">
+                Building strong partnerships with leading technology companies and organizations 
+                to deliver exceptional solutions and drive innovation together
+            </p>
+        </div>
+    </section>
+
+    <!-- Partner Categories -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Partnership Categories</h2>
+                <p class="section-subtitle">
+                    We collaborate with various types of partners to enhance our service offerings
+                </p>
+            </div>
+            
+            <div class="partner-categories">
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="category-title">Technology Partners</h3>
+                    <p class="category-count">25+ Partners</p>
+                    <p class="category-description">
+                        Leading technology vendors and platform providers that enhance our 
+                        development capabilities.
+                    </p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="category-title">Cloud Partners</h3>
+                    <p class="category-count">15+ Partners</p>
+                    <p class="category-description">
+                        Major cloud service providers enabling scalable and secure 
+                        infrastructure solutions.
+                    </p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="category-title">Strategic Partners</h3>
+                    <p class="category-count">20+ Partners</p>
+                    <p class="category-description">
+                        Long-term strategic alliances that expand our market reach and 
+                        service capabilities.
+                    </p>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="category-title">Integration Partners</h3>
+                    <p class="category-count">30+ Partners</p>
+                    <p class="category-description">
+                        System integrators and consultants who help deliver comprehensive 
+                        solutions to clients.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strategic Partners -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Strategic Partners</h2>
+                <p class="section-subtitle">
+                    Our key strategic partnerships that drive innovation and business growth
+                </p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="partner-name">Microsoft</h3>
+                    <p class="partner-type">Gold Partner</p>
+                    <p class="partner-description">
+                        Certified Microsoft Gold Partner specializing in Azure cloud solutions, 
+                        .NET development, and enterprise software integration.
+                    </p>
+                    <a href="#" class="partner-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="partner-name">Amazon Web Services</h3>
+                    <p class="partner-type">Advanced Partner</p>
+                    <p class="partner-description">
+                        AWS Advanced Consulting Partner providing cloud migration, serverless 
+                        architecture, and scalable infrastructure solutions.
+                    </p>
+                    <a href="#" class="partner-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="partner-name">Google Cloud</h3>
+                    <p class="partner-type">Premier Partner</p>
+                    <p class="partner-description">
+                        Google Cloud Premier Partner offering AI/ML solutions, data analytics, 
+                        and modern application development services.
+                    </p>
+                    <a href="#" class="partner-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fab fa-salesforce"></i>
+                    </div>
+                    <h3 class="partner-name">Salesforce</h3>
+                    <p class="partner-type">Consulting Partner</p>
+                    <p class="partner-description">
+                        Salesforce Consulting Partner delivering CRM implementations, 
+                        custom app development, and integration solutions.
+                    </p>
+                    <a href="#" class="partner-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3 class="partner-name">Docker</h3>
+                    <p class="partner-type">Technology Partner</p>
+                    <p class="partner-description">
+                        Docker Technology Partner specializing in containerization, 
+                        microservices architecture, and DevOps automation.
+                    </p>
+                    <a href="#" class="partner-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="partner-name">MongoDB</h3>
+                    <p class="partner-type">Technology Partner</p>
+                    <p class="partner-description">
+                        MongoDB Technology Partner providing NoSQL database solutions, 
+                        data modeling, and performance optimization services.
+                    </p>
+                    <a href="#" class="partner-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Partners -->
+    <section class="technology-partners">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Technology Partners</h2>
+                <p class="section-subtitle">
+                    Leading technology platforms and tools we work with to deliver cutting-edge solutions
+                </p>
+            </div>
+            
+            <div class="tech-grid">
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-name">React</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-angular"></i>
+                    </div>
+                    <div class="tech-name">Angular</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-vuejs"></i>
+                    </div>
+                    <div class="tech-name">Vue.js</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <div class="tech-name">Node.js</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="tech-name">Python</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <div class="tech-name">Java</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="tech-name">Flutter</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <div class="tech-name">React Native</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="tech-name">Kubernetes</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fab fa-jenkins"></i>
+                    </div>
+                    <div class="tech-name">Jenkins</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="tech-name">TensorFlow</div>
+                </div>
+
+                <div class="tech-partner">
+                    <div class="tech-logo">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="tech-name">Tableau</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Benefits -->
+    <section class="partnership-benefits">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Partnership Benefits</h2>
+                <p class="section-subtitle">
+                    How our strategic partnerships benefit our clients and drive innovation
+                </p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="benefit-title">Accelerated Innovation</h3>
+                    <p class="benefit-description">
+                        Access to cutting-edge technologies and early adoption of new platforms 
+                        enables us to deliver innovative solutions faster to market.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="benefit-title">Certified Expertise</h3>
+                    <p class="benefit-description">
+                        Our team holds certifications from major technology partners, ensuring 
+                        best practices and optimal implementation of solutions.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3 class="benefit-title">Cost Optimization</h3>
+                    <p class="benefit-description">
+                        Partner benefits and volume discounts allow us to provide cost-effective 
+                        solutions while maintaining high quality standards.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="benefit-title">Enhanced Support</h3>
+                    <p class="benefit-description">
+                        Direct access to partner technical support and resources ensures faster 
+                        issue resolution and better client service.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="benefit-title">Global Reach</h3>
+                    <p class="benefit-description">
+                        Partner networks enable us to serve clients globally with consistent 
+                        quality and local expertise in different markets.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Security & Compliance</h3>
+                    <p class="benefit-description">
+                        Partnership with security-focused vendors ensures our solutions meet

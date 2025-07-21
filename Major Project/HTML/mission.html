@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission - SRBBHX Software Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poiret+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Major Project/CSS/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #7E1891 0%, #A294F9 25%, #CDC1FF 75%, #E5D9F2 100%);
+            padding: 120px 0 80px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .page-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .content-section {
+            padding: 80px 0;
+        }
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .mission-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        .mission-statement {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #333;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        .mission-description {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pillars-section {
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .pillar-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .pillar-card:hover {
+            transform: translateY(-10px);
+        }
+        .pillar-icon {
+            width: 100px;
+            height: 100px;
+            background: #7E1891;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+        .pillar-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        .pillar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .pillar-description {
+            color: #666;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        .vision-section {
+            padding: 80px 0;
+        }
+        .vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .vision-text h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+        .vision-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .vision-visual {
+            text-align: center;
+        }
+        .impact-section {
+            background: #F5EFFF;
+            padding: 80px 0;
+        }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        .impact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #7E1891;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .impact-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        .impact-description {
+            color: #666;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .vision-grid, .impact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+            .mission-statement {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/Major Project/HTML/index.html" class="logo-link">
+                    <div class="logo-container">
+                        <img src="/Major Project/ASSETS/IMAGES/scnsoft-logo.png" alt="SCNSoft Logo" class="logo-image">
+                        <div class="logo-text-container">
+                            <span class="logo-text">SCNSoft</span>
+                            <span class="logo-tagline">Software Solutions</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item dropdown about-dropdown">
+                        <a href="#about" class="nav-link dropdown-toggle">
+                            About <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu about-dropdown-menu">
+                            <div class="dropdown-container about-dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Company</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="about-company.html">About Company</a></li>
+                                        <li><a href="mission.html">Mission</a></li>
+                                        <li><a href="leadership.html">Leadership</a></li>
+                                        <li><a href="our-team.html">Our Team</a></li>
+                                        <li><a href="portfolio.html">Portfolio</a></li>
+                                        <li><a href="client-reviews.html">Client Reviews</a></li>
+                                        <li><a href="partners.html">Partners</a></li>
+                                        <li><a href="locations.html">Locations</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Approach</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="where-to-start.html">Where to Start</a></li>
+                                        <li><a href="pricing-models.html">Pricing Models</a></li>
+                                        <li><a href="software-development-approach.html">Approach to Software Development</a></li>
+                                        <li><a href="security-management-approach.html">Approach to Security Management</a></li>
+                                        <li><a href="technology-partnership.html">Technology Partnership</a></li>
+                                        <li><a href="sustainability-policy.html">Sustainability Policy</a></li>
+                                        <li><a href="faq.html">FAQ</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Recognition</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="testimonials.html">Testimonials</a></li>
+                                        <li><a href="awards.html">Awards</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Join Us</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="careers.html">Careers</a></li>
+                                        <li><a href="become-agent.html">Become Our Agent</a></li>
+                                        <li><a href="referral-program.html">Referral Program</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">Insights & News</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="thought-leadership.html">Thought Leadership</a></li>
+                                        <li><a href="news.html">News</a></li>
+                                        <li><a href="for-journalists.html">For Journalists</a></li>
+                                        <li><a href="experts-media.html">Our Experts for Media</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#services" class="nav-link dropdown-toggle">
+                            Services <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-container">
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-title">Solutions.</h4>
+                                    <p class="dropdown-subtitle">Get software development services, built around your needs:</p>
+                                    <ul class="dropdown-list">
+                                        <li><a href="staff-augmentation.html">Staff Augmentation</a></li>
+                                        <li><a href="dedicated-teams.html">Dedicated Teams</a></li>
+                                        <li><a href="software-outsourcing.html">Software Outsourcing</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">TOP SOLUTIONS</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="custom-software-development.html">Custom Software Development</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="mobile-app-development.html">Mobile App Development</a></li>
+                                        <li><a href="cloud-solutions.html">Cloud Solutions</a></li>
+                                        <li><a href="data-analytics-bi.html">Data Analytics & BI</a></li>
+                                        <li><a href="ai-development.html">AI Development</a></li>
+                                        <li><a href="devops-automation.html">DevOps & Automation</a></li>
+                                        <li><a href="ux-ui-design.html">UX/UI Design</a></li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="dropdown-column">
+                                    <h4 class="dropdown-category">ENTERPRISE FOCUSED</h4>
+                                    <ul class="dropdown-list">
+                                        <li><a href="enterprise-software.html">Enterprise Software</a></li>
+                                        <li><a href="legacy-modernization.html">Legacy Modernization</a></li>
+                                        <li><a href="system-integration.html">System Integration</a></li>
+                                        <li><a href="digital-transformation.html">Digital Transformation</a></li>
+                                        <li><a href="it-consulting.html">IT Consulting</a></li>
+                                        <li><a href="cybersecurity.html">Cybersecurity</a></li>
+                                        <li><a href="erp-development.html">ERP Development</a></li>
+                                        <li><a href="crm-systems.html">CRM Systems</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#industries" class="nav-link">Industries</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#portfolio" class="nav-link">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#company" class="nav-link">Company</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#insights" class="nav-link">Insights</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="#contact" class="nav-contact-btn">Contact Us</a>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="content-container">
+            <h1 class="page-title">Our Mission</h1>
+            <p class="page-subtitle">
+                Empowering businesses through innovative software solutions that drive growth, 
+                efficiency, and digital transformation
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="mission-hero">
+                <h2 class="mission-statement">
+                    "To transform businesses through cutting-edge software solutions that unlock potential, 
+                    drive innovation, and create lasting value for our clients and their customers."
+                </h2>
+                <p class="mission-description">
+                    At SRBBHX, we believe that technology should be a catalyst for growth, not a barrier. 
+                    Our mission drives us to create software solutions that are not just functional, but 
+                    transformational—helping businesses reimagine what's possible and achieve their most 
+                    ambitious goals.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Pillars -->
+    <section class="pillars-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Mission Pillars</h2>
+                <p class="section-subtitle">
+                    The fundamental principles that guide our approach to software development and client partnership
+                </p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="pillar-title">Innovation First</h3>
+                    <p class="pillar-description">
+                        We embrace emerging technologies and innovative approaches to solve complex business 
+                        challenges, ensuring our clients stay ahead of the competition.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="pillar-title">Client-Centric Focus</h3>
+                    <p class="pillar-description">
+                        Every solution we create is tailored to our clients' unique needs, goals, and vision. 
+                        Their success is our success, and we're committed to delivering exceptional value.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="pillar-title">Quality Excellence</h3>
+                    <p class="pillar-description">
+                        We maintain the highest standards in software development, from code quality to 
+                        user experience, ensuring robust, scalable, and maintainable solutions.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="pillar-title">Partnership Approach</h3>
+                    <p class="pillar-description">
+                        We work as true partners with our clients, providing ongoing support, strategic guidance, 
+                        and collaborative problem-solving throughout the entire project lifecycle.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="pillar-title">Global Impact</h3>
+                    <p class="pillar-description">
+                        Our solutions are designed to make a positive impact not just on businesses, but on 
+                        communities and industries worldwide, contributing to digital transformation at scale.
+                    </p>
+                </div>
+                
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="pillar-title">Sustainable Growth</h3>
+                    <p class="pillar-description">
+                        We believe in creating solutions that support long-term, sustainable business growth 
+                        while being mindful of environmental and social responsibility.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="content-container">
+            <div class="vision-grid">
+                <div class="vision-text">
+                    <h2>Our Vision</h2>
+                    <p>
+                        To be the world's most trusted partner for digital transformation, recognized for our 
+                        ability to turn complex business challenges into innovative software solutions that 
+                        drive measurable results.
+                    </p>
+                    <p>
+                        We envision a future where every business, regardless of size or industry, has access 
+                        to world-class software solutions that enable them to compete, grow, and thrive in 
+                        the digital economy.
+                    </p>
+                    <p>
+                        By 2030, we aim to have helped over 10,000 businesses transform their operations 
+                        through our software solutions, creating millions of jobs and billions in economic value.
+                    </p>
+                </div>
+                <div class="vision-visual">
+                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, #7E1891, #A294F9); border-radius: 20px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-eye" style="font-size: 4rem; color: white; opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="content-container">
+            <div class="section-header">
+                <h2 class="section-title">Our Impact</h2>
+                <p class="section-subtitle">
+                    Measuring success through the positive impact we create for our clients and communities
+                </p>
+            </div>
+            
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <span class="impact-number">95%</span>
+                    <h3 class="impact-title">Client Satisfaction Rate</h3>
+                    <p class="impact-description">
+                        Our commitment to excellence is reflected in our consistently high client satisfaction 
+                        scores and long-term partnerships.
+                    </p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">$2.5B+</span>
+                    <h3 class="impact-title">Client Revenue Generated</h3>
+                    <p class="impact-description">
+                        Our software solutions have directly contributed to over $2.5 billion in additional 
+                        revenue for our clients across various industries.
+                    </p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">40%</span>
+                    <h3 class="impact-title">Average Efficiency Improvement</h3>
+                    <p class="impact-description">
+                        On average, our solutions help clients improve their operational efficiency by 40%, 
+                        reducing costs and increasing productivity.
+                    </p>
+                </div>
+                
+                <div class="impact-card">
+                    <span class="impact-number">50,000+</span>
+                    <h3 class="impact-title">Jobs Created</h3>
+                    <p class="impact-description">
+                        Through our digital transformation initiatives, we've helped create over 50,000 new 
+                        jobs in the technology sector worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
