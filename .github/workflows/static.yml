@@ -20,13 +20,14 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Copy site to public/
+      -      - name: Copy site to public/
         run: |
           mkdir public
           cp -r HTML/* public/
           cp -r ASSETS public/
           cp -r CSS public/
           cp -r JAVASCRIPT public/
+
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
